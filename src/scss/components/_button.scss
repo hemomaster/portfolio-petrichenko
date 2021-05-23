@@ -1,0 +1,15 @@
+.primary-btn {
+  @extend %poppins-bold;
+  font-size: fz(sm);
+  line-height: 1.5;
+  background-color: clr(accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 12px 25px;
+  cursor: pointer;
+
+  &--simple {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

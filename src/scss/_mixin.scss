@@ -166,7 +166,21 @@ html {
   line-height: 1.67;
 }
 
-%poppins-bold-small {
-  font-weight: 700;
-  font-size: fz(sm);
+%circle-decor {
+  position: relative;
+  padding-left: 10px;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: clr(accent-color);
+    z-index: -1;
+  }
 }

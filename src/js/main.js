@@ -1,10 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const scrollLinkAll = document.querySelectorAll(
-    "a[href^='#']:not(a[href='#'])"
-  );
-
   // JUSTVALIDATE
   const validateForm = (selector, rules) => {
     if (!selector) return;
@@ -39,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     tel: { required: true },
   });
 
-  // SMOOTH SCROLL
+  // ПОКАЗАТЬ/СКРЫТЬ ССЫЛКУ ПРОКРУТКИ К НАЧАЛУ СТРАНИЦЫ
+  // селектор вида a.#scroll-up
   let isDoneIn = false,
     isDoneOut = false;
 
@@ -61,22 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", handlerScrollUp);
   handlerScrollUp();
-
-  scrollLinkAll.forEach((link) =>
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = e.target
-        .closest(".scroll-link")
-        .getAttribute("href")
-        .substring(1);
-
-      if (!id) return;
-
-      document.getElementById(id).scrollIntoView({
-        behavior: "smooth",
-      });
-    })
-  );
 
   // end js
 });

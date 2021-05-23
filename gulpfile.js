@@ -9,6 +9,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify-es").default;
 const concat = require("gulp-concat");
 const htmlmin = require("gulp-htmlmin");
+const del = require("del");
 const imagemin = require("gulp-imagemin");
 
 // BROWSER-SYNC
@@ -35,6 +36,11 @@ const fonts = () => {
     .pipe(browserSync.stream());
 };
 
+// COPY FAVICON
+const favicon = () => {
+  return src("src/favicon/*").pipe(dest("dist/favicon"));
+};
+
 // COPY MAILER
 const mailer = () => {
   return src("src/mailer/**/*").pipe(dest("dist/mailer"));
@@ -43,7 +49,7 @@ const mailer = () => {
 // IMAGE COMPRESSION
 const images = () => {
   return (
-    src("src/images/**/*")
+    src("src/images/**/*.+(jpg|png|jpeg|svg|webp)")
       // .pipe(imagemin())
       .pipe(dest("dist/images"))
       .pipe(browserSync.stream())
@@ -52,7 +58,7 @@ const images = () => {
 
 // CREATE CSS
 const styles = () => {
-  return src("src/scss/**/*.+(scss|sass)")
+  return src("src/scss/**/*.+(scss|sass|css)")
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer())
@@ -76,11 +82,8 @@ const scripts = () => {
     "node_modules/just-validate/dist/js/just-validate.js",
     // "node_modules/inputmask/dist/inputmask.js",
     // "node_modules/swiper/swiper-bundle.js",
-    "node_modules/wow.js/dist/wow.js",
-    "src/js/supportWebp.js",
-    "src/js/lockScroll.js",
-    "src/js/fadeInOut.js",
-    "src/js/main.js",
+    // "node_modules/wow.js/dist/wow.js",
+    "src/js/*.js",
   ])
     .pipe(concat("main.min.js"))
     .pipe(sourcemaps.init())
@@ -88,6 +91,10 @@ const scripts = () => {
     .pipe(sourcemaps.write("./"))
     .pipe(dest("dist/js"))
     .pipe(browserSync.stream());
+};
+
+const cleandist = () => {
+  return del("dist/**/*", { force: true }); // Удаляем всё содержимое папки "dist/"
 };
 
 // WATCHING
@@ -107,14 +114,20 @@ exports.html = html;
 exports.fonts = fonts;
 exports.mailer = mailer;
 exports.images = images;
+exports.favicon = favicon;
+exports.cleandist = cleandist;
 
-exports.default = parallel(
-  scripts,
-  styles,
-  html,
-  server,
-  fonts,
-  mailer,
-  images,
-  watching
+exports.default = series(
+  cleandist,
+  parallel(
+    scripts,
+    styles,
+    html,
+    server,
+    mailer,
+    favicon,
+    fonts,
+    images,
+    watching
+  )
 );

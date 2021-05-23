@@ -1,0 +1,13 @@
+.title {
+  @extend %poppins-bold;
+
+  &--md {
+    font-size: fz(md);
+    line-height: 1.5;
+  }
+
+  &--xxxl {
+    font-size: fz(xxxl);
+    line-height: 1.25;
+  }
+}
