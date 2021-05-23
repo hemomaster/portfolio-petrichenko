@@ -1,0 +1,35 @@
+// до 1440px
+@include respond-to(xxxxl) {
+}
+
+// до 1200px
+@include respond-to(xxxl) {
+}
+
+// до 1024px
+@include respond-to(xxl) {
+}
+
+// до 992px
+@include respond-to(xl) {
+}
+
+// до 800px
+@include respond-to(lg) {
+}
+
+// до 768px
+@include respond-to(md) {
+}
+
+// до 576px
+@include respond-to(sm) {
+}
+
+// до 414px
+@include respond-to(xs) {
+}
+
+// до 375px
+@include respond-to(xxs) {
+}

@@ -1,0 +1,8 @@
+h1 {
+  font-size: fz(xxxl);
+}
+.hero {
+  height: 100%;
+  @extend %cover-location;
+  @extend %f-center;
+}
