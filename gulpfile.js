@@ -43,7 +43,7 @@ const mailer = () => {
 // IMAGE COMPRESSION
 const images = () => {
   return (
-    src("src/images/**/*.+(jpg|jpeg|png|webp|svg)")
+    src("src/images/**/*")
       // .pipe(imagemin())
       .pipe(dest("dist/images"))
       .pipe(browserSync.stream())
