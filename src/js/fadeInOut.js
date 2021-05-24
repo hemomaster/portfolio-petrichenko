@@ -1,3 +1,4 @@
+// плавно скрыть элемент с selector
 window.fadeOut = function (selector) {
   const el = document.querySelector(selector);
 
@@ -14,6 +15,8 @@ window.fadeOut = function (selector) {
   })();
 };
 
+// плавно показать элемент с selector
+// изначально display: none
 window.fadeIn = function (selector, display = "block") {
   const el = document.querySelector(selector);
 

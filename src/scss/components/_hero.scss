@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  max-height: 800px;
   height: 1px;
   @extend %cover-location;
 
@@ -45,6 +46,7 @@
       position: absolute;
       right: 0;
       height: 3px;
+      border-radius: 2px;
       background-color: clr(log-cabin-color);
     }
 
@@ -67,5 +69,8 @@
     &::after {
       bottom: 0;
     }
+  }
+
+  &__menu {
   }
 }

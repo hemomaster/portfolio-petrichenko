@@ -1,6 +1,9 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const openMenuEl = document.querySelector(".hero__hamburger");
+  const menuEl = document.querySelector(".menu");
+
   // JUSTVALIDATE
   const validateForm = (selector, rules) => {
     if (!selector) return;
@@ -59,5 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", handlerScrollUp);
   handlerScrollUp();
 
+  // ПОКАЗАТЬ/СКРЫТЬ МЕНЮ САЙТА
+  const handlerCloseMenu = (e) => {
+    const target = e.target;
+    if (target.closest(".menu__close") || target.closest(".menu__overlay")) {
+      menuEl.classList.remove("active");
+      menuEl.removeEventListener("click", handlerCloseMenu);
+    }
+  };
+
+  openMenuEl.addEventListener("click", () => {
+    menuEl.classList.add("active");
+    menuEl.addEventListener("click", handlerCloseMenu);
+  });
   // end js
 });

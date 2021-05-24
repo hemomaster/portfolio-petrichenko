@@ -1,0 +1,131 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: left 0.1s ease-in-out 0.6s;
+
+  &.active {
+    left: 0;
+    transition: left 0.1s ease-in-out 0s;
+
+    .menu__block {
+      left: 0;
+      transition: left 0.4s linear 0.5s;
+    }
+
+    .menu__overlay {
+      visibility: visible;
+      opacity: 1;
+      // transition-delay: 0.4s;
+      transition: all 0.4s ease-in-out 0.3s;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(clr(white-color), 0.75);
+    z-index: 105;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.2s;
+  }
+
+  &__block {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 345px;
+    height: 100%;
+    z-index: 110;
+    transition: left 0.4s linear 0s;
+  }
+
+  &__nav {
+    @extend %d-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: clr(accent-color);
+    padding: 25px 40px 50px;
+
+    &-list {
+      padding-top: 115px;
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 35px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        border: 1px solid clr(dark-color);
+        border-radius: 100%;
+        background-color: transparent;
+        margin-top: -2px;
+        transition: background-color 0.4s ease-in-out;
+      }
+
+      &:hover::before {
+        background-color: clr(white-color);
+        transition: background-color 0.4s ease-in-out;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-link {
+      @extend %d-block;
+      text-transform: uppercase;
+      color: clr(white-color);
+    }
+
+    &-social {
+      .social__item:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: clr(dark-color);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
