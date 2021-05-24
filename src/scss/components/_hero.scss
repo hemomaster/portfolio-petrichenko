@@ -3,7 +3,6 @@
   min-height: 100vh;
   height: 1px;
   @extend %cover-location;
-  // @extend %f-center;
 
   &__container {
     height: 100%;
@@ -12,70 +11,61 @@
   }
 
   &__content {
-    // margin-bottom: 200px;
-
     &-subtitle {
       @extend %d-block;
       @extend %circle-decor;
       margin-bottom: 10px;
     }
+
     &-title {
       max-width: 530px;
       margin-bottom: 25px;
     }
+
     &-controls {
     }
+
     &-link {
       &:not(:last-child) {
         margin-right: 20px;
       }
     }
   }
-}
-.socpanel {
-  position: absolute;
-  top: 50%;
-  left: 65px;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  display: inline-flex;
-  @extend %f-center;
 
-  &__name {
-    position: relative;
-    padding-right: 85px;
-    margin-right: 15px;
-    white-space: nowrap;
+  &__hamburger {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 36px;
+    height: 23px;
 
+    &-bar,
+    &::before,
     &::after {
-      content: "";
       position: absolute;
       right: 0;
-      top: 50%;
-      margin-top: -1px;
-      width: 70px;
-      height: 2px;
-      background-color: clr(dark-color);
-    }
-  }
-  &__list {
-  }
-  .social {
-    @extend %f-center;
-    &__item {
-      &:not(:last-child) {
-        margin-right: 15px;
-      }
-    }
-    &__link {
+      height: 3px;
+      background-color: clr(log-cabin-color);
     }
 
-    .icon-facebook,
-    .icon-instagram,
-    .icon-github {
-      @extend %d-block;
-      width: 20px;
-      height: 20px;
-      color: clr(dark-color);
+    &-bar {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      width: 83.33%;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
     }
   }
 }

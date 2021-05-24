@@ -78,7 +78,8 @@ body {
   padding: 0 $padding-container;
 
   &--max {
-    max-width: 1920px + $padding-container * 2;
+    max-width: 1920px;
+    padding: 0;
   }
 }
 
