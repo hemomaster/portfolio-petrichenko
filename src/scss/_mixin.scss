@@ -17,7 +17,7 @@ FUNCTION AND MIXIN
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
   }
-  @warn "Unknown `#{$key}` in $colors.";
+  @warn "<<< Unknown `#{$key}` in $colors.";
   @return null;
 }
 
@@ -182,5 +182,25 @@ html {
     border-radius: 100%;
     background-color: clr(accent-color);
     z-index: -1;
+  }
+}
+
+%bar-decor {
+  span {
+    @extend %d-block;
+    position: relative;
+    padding-bottom: 25px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      background-color: clr(accent-color);
+      @extend %x-center;
+    }
   }
 }

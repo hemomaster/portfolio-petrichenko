@@ -1,0 +1,90 @@
+.about {
+  &__grid {
+    &-img {
+    }
+    &-descr {
+    }
+    &-skills {
+    }
+  }
+}
+
+.desr {
+  .desr__title {
+    @extend %circle-decor;
+    margin-bottom: 10px;
+  }
+
+  .descr__name {
+    @extend %bar-decor;
+    margin-bottom: 20px;
+
+    span {
+      padding-bottom: 4px;
+
+      &::before {
+        right: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.my-skill {
+  @extend %d-flex;
+  justify-content: space-between;
+  width: 260px;
+
+  &__media {
+    flex: 0 0 36px + 6px;
+    padding-right: 6px;
+    margin-right: 25px;
+  }
+
+  &__circle {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: clr(accent-color);
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: clr(dark-color);
+      transform: scale(1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .icon-web,
+    .icon-design {
+      width: 25px;
+      height: 23px;
+    }
+
+    .icon-development {
+      width: 15px;
+      height: 25px;
+    }
+  }
+
+  &__info {
+    flex: 0 0 200px;
+  }
+  &__title {
+    margin-bottom: 5px;
+  }
+  &__descr {
+    @include limitstr(4);
+    font-size: fz(xs);
+  }
+
+  &:hover {
+    .my-skill__circle svg {
+      color: clr(black-color);
+      transform: scale(1.19);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

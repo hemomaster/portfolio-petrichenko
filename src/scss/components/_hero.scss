@@ -1,8 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100vh;
-  max-height: 800px;
-  height: 1px;
+  height: clamp(640px, 100vh, 800px);
   @extend %cover-location;
 
   &__container {

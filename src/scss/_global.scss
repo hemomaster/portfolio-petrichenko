@@ -83,6 +83,10 @@ body {
   }
 }
 
+.section {
+  padding-top: 120px;
+}
+
 .list-reset {
   margin: 0;
   padding: 0;
@@ -115,13 +119,6 @@ body {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-}
-
-.icon-chevron-circle-up {
-  color: clr(accent-color);
-}
-
-.title {
 }
 
 .scroll-up {
