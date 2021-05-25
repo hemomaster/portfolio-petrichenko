@@ -204,7 +204,7 @@ html {
 
 %bar-decor {
   span {
-    @extend %d-block;
+    display: inline-block;
     position: relative;
     padding-bottom: 25px;
 

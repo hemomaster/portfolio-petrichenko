@@ -3,6 +3,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const openMenuEl = document.querySelector(".hero__hamburger");
   const menuEl = document.querySelector(".menu");
+  const technologyValueEls = document.querySelectorAll(
+    ".technology__levels-value"
+  );
+  const technologyProgressEls = document.querySelectorAll(
+    ".technology__levels-progress"
+  );
 
   // JUSTVALIDATE
   const validateForm = (selector, rules) => {
@@ -75,5 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
     menuEl.classList.add("active");
     menuEl.addEventListener("click", handlerCloseMenu);
   });
+  // ОТОБРАЗИТЬ ШКАЛУ В PROGRESS
+  technologyValueEls.forEach(
+    (val, i) =>
+      (technologyProgressEls[i].style.width = parseInt(val.textContent) + "%")
+  );
+
   // end js
 });

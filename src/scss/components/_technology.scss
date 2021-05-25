@@ -1,0 +1,84 @@
+.technology {
+  &__title {
+    @extend %circle-decor-center;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    @extend %bar-decor;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__cards {
+    @extend %d-grid;
+    grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
+    grid-auto-rows: minmax(270px, auto);
+    justify-content: center;
+    gap: 13px;
+    margin-bottom: 120px;
+
+    &-item {
+      border: 1px solid clr(black-color);
+      padding: 30px 30px 25px;
+    }
+
+    &-media {
+      @extend %d-flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 65px;
+      margin-bottom: 20px;
+    }
+
+    &-image {
+      max-height: 65px;
+    }
+
+    &-title {
+      margin-bottom: 15px;
+    }
+    &-text {
+      font-size: fz(xs);
+    }
+  }
+
+  &__levels {
+    @extend %d-grid;
+    grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
+    grid-auto-rows: minmax(70px, auto);
+    gap: 30px 45px;
+
+    &-item {
+      @extend %d-flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-header {
+      @extend %f-center-between;
+      margin: 9px 0 0;
+    }
+
+    &-name {
+      @extend %circle-decor;
+    }
+
+    &-bar {
+      position: relative;
+      height: 14px;
+      border-radius: 4px;
+      background-color: clr(cararra-color);
+    }
+
+    &-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 14px;
+      border-radius: 4px;
+      background-color: clr(accent-color);
+    }
+  }
+}
