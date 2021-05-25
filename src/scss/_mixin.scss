@@ -147,9 +147,8 @@ html {
   justify-content: center;
 }
 
-%f-space-between {
-  @extend %d-flex;
-  align-items: center;
+%f-center-between {
+  @extend %f-center;
   justify-content: space-between;
 }
 
@@ -171,21 +170,35 @@ html {
 }
 
 %circle-decor {
-  position: relative;
-  padding-left: 10px;
-  z-index: 10;
+  span {
+    position: relative;
+    padding-left: 10px;
+    z-index: 10;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
-    background-color: clr(accent-color);
-    z-index: -1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+      background-color: clr(accent-color);
+      z-index: -1;
+    }
+  }
+}
+
+%circle-decor-center {
+  @extend %circle-decor;
+  span {
+    padding-left: 0;
+
+    &::before {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 

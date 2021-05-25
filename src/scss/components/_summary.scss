@@ -1,0 +1,141 @@
+.summary {
+  &__container {
+    max-width: 986px + $padding-container * 2;
+  }
+
+  &__title {
+    @extend %circle-decor-center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__name {
+    @extend %bar-decor;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__grid {
+    @extend %d-grid;
+    grid-template-columns: repeat(2, 425px);
+
+    column-gap: 130px;
+  }
+
+  &__column {
+  }
+
+  &__column-title {
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      background-color: clr(accent-color);
+    }
+  }
+
+  &__list {
+    position: relative;
+    @extend %d-grid;
+    grid-template-rows: repeat(2, minmax(130px, auto));
+    grid-auto-rows: minmax(130px, auto);
+    row-gap: 45px;
+    padding-top: 45px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 1px;
+      height: calc(100% + 9px);
+      background-color: clr(black-color);
+    }
+  }
+
+  &__list-item {
+    padding-left: 40px;
+  }
+}
+
+.info {
+  &__header {
+    position: relative;
+    @extend %f-center;
+    margin-bottom: 12px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-100%, -50%);
+      width: 40px;
+      height: 1px;
+      background-color: clr(black-color);
+    }
+
+    &-circle {
+      position: relative;
+      flex: 0 0 36px;
+      height: 36px;
+      border-radius: 100%;
+      background-color: clr(accent-color);
+      margin-right: 20px;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: clr(dark-color);
+        transform: scale(1);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .icon-university {
+        width: 20px;
+        height: 25px;
+      }
+      .icon-courses {
+        width: 25px;
+        height: 24px;
+      }
+      .icon-frontend {
+        width: 24px;
+        height: 25px;
+      }
+      .icon-designer {
+        width: 21px;
+        height: 24px;
+      }
+    }
+    &-descr {
+      margin: 0 auto 0 0;
+    }
+    &-descr-title {
+      margin-bottom: 2px;
+    }
+    &-descr-value {
+      font-size: fz(xs);
+    }
+  }
+  &__text {
+    font-size: fz(xs);
+  }
+
+  &:hover {
+    .info__header-circle svg {
+      color: clr(black-color);
+      transform: scale(1.19);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
