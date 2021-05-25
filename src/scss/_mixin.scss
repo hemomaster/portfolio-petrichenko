@@ -153,6 +153,10 @@ html {
   justify-content: space-between;
 }
 
+%d-grid {
+  display: grid;
+}
+
 %cover-location {
   background-color: clr(cover-color);
   background-size: cover;
