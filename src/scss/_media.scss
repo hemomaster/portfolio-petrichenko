@@ -2,8 +2,25 @@
 @include respond-to(xxxxl) {
 }
 
+@media screen and (max-width: 1301px) {
+  .socpanel {
+    display: none;
+  }
+}
 // до 1200px
 @include respond-to(xxxl) {
+  .container {
+    max-width: 990px;
+  }
+
+  .about__grid {
+    grid-template-columns: 380px 550px;
+    gap: 20px 30px;
+  }
+
+  .about__grid-skills {
+    gap: 20px 30px;
+  }
 }
 
 // до 1024px
@@ -12,6 +29,48 @@
 
 // до 992px
 @include respond-to(xl) {
+  .container {
+    max-width: 760px;
+  }
+
+  .section {
+    padding-top: 80px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .title.title--xxxl {
+    font-size: 32px;
+  }
+
+  .about__grid {
+    grid-template-columns: 300px 400px;
+    gap: 20px 30px;
+  }
+
+  .descr__detailed {
+    @include limitstr(5);
+  }
+
+  .about__grid-skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(90px, auto));
+    grid-auto-rows: minmax(90px, auto);
+  }
+
+  .my-skill {
+    width: 100%;
+  }
+
+  .my-skill__info {
+    flex: 0 1 calc(100% - 62px);
+  }
+
+  .my-skill__descr {
+    @include limitstr(3);
+  }
 }
 
 // до 800px
@@ -20,14 +79,84 @@
 
 // до 768px
 @include respond-to(md) {
+  .container {
+    max-width: 570px;
+  }
+
+  .section {
+    padding-top: 60px;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(245px, auto) minmax(230px, auto);
+    grid-auto-rows: minmax(230px, auto);
+  }
+
+  .about__grid-media {
+    grid-row: auto;
+  }
 }
 
 // до 576px
 @include respond-to(sm) {
+  .container {
+    width: 100%;
+  }
+
+  .section {
+    padding-top: 40px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .hero {
+    background-position-x: 57%;
+  }
+
+  .hero__content-title {
+    max-width: 380px;
+  }
+
+  .menu__block {
+    width: 300px;
+  }
+
+  .menu__nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero__hamburger {
+    right: 20px;
+  }
+
+  .menu__close {
+    top: 20px;
+    right: 20px;
+  }
 }
 
 // до 414px
 @include respond-to(xs) {
+  .title--xxxl {
+    font-size: 26px;
+  }
+
+  .hero {
+    background-position-x: 60%;
+  }
+
+  .hero__content-title {
+    max-width: 290px;
+    margin-bottom: 30px;
+  }
+
+  .menu__block {
+    width: 250px;
+  }
 }
 
 // до 375px

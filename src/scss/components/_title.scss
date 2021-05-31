@@ -1,32 +1,32 @@
 .title {
   @extend %poppins-bold;
 
-  &--sm {
+  &.title--sm {
     font-size: fz(sm);
     line-height: 1.5;
   }
 
-  &--md {
+  &.title--md {
     font-size: fz(md);
     line-height: 1.5;
   }
 
-  &--lg {
+  &.title--lg {
     font-size: fz(lg);
     line-height: 1.5;
   }
 
-  &--xl {
+  &.title--xl {
     font-size: fz(xl);
     line-height: 1.5;
   }
 
-  &--xxxl {
+  &.title--xxxl {
     font-size: fz(xxxl);
     line-height: 1.25;
   }
 
-  &--italic {
+  &.title--italic {
     font-style: italic;
   }
 }
