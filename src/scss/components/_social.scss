@@ -7,16 +7,21 @@
     }
   }
 
-  &__link:hover {
-    svg {
-      color: lighten(clr(dark-color), 15%);
-      transition: color 0.4s ease-in-out;
+  &__link {
+    @extend %d-block;
+
+    &:hover {
+      svg {
+        color: lighten(clr(dark-color), 15%);
+        transition: color 0.4s ease-in-out;
+      }
     }
   }
 
   .icon-facebook,
   .icon-instagram,
-  .icon-github {
+  .icon-github,
+  .icon-telegram {
     @extend %d-block;
     width: 20px;
     height: 20px;

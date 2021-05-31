@@ -860,6 +860,119 @@
             </div>
           </div>
         </section>
+        <section class="section contact">
+          <div class="container contact__grid">
+            <picture class="contact__media">
+              <source srcset="./images/foto.webp" type="image/webp" />
+              <img
+                class="contact__img"
+                src="./images/foto.jpg"
+                width="400"
+                height="600"
+                alt="image"
+              />
+            </picture>
+            <div class="contact__content">
+              <h2 class="contact__title">
+                <span>Контакты</span>
+              </h2>
+              <div class="title contact__name">
+                <span>Свяжитесь со мной</span>
+              </div>
+              <span class="title title--sm title--italic contact__descr"
+                >Любым удобным для вас способом:</span
+              >
+              <ul class="list-reset contact__list social">
+                <li class="social__item">
+                  <a href="#" class="social__link"
+                    ><svg class="icon icon-facebook">
+                      <use
+                        xlink:href="./images/symbol-defs.svg#icon-facebook"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link"
+                    ><svg class="icon icon-telegram">
+                      <use
+                        xlink:href="./images/symbol-defs.svg#icon-telegram"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link"
+                    ><svg class="icon icon-instagram">
+                      <use
+                        xlink:href="./images/symbol-defs.svg#icon-instagram"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+              <span class="title title--sm title--italic contact__descr"
+                >Или оставьте ваши данные и я сама вам напишу:</span
+              >
+              <form action="#" class="contact__form">
+                <div class="contact__form-group">
+                  <div class="contact__form-control">
+                    <label class="contact__form-label" for="name"
+                      >Ваше имя</label
+                    >
+                    <input
+                      class="contact__form-field"
+                      type="text"
+                      name="user_name"
+                      id="name"
+                    />
+                  </div>
+                  <div class="contact__form-control">
+                    <label class="contact__form-label" for="email"
+                      >Ваша почта</label
+                    >
+                    <input
+                      class="contact__form-field"
+                      type="email"
+                      name="user_email"
+                      id="email"
+                    />
+                  </div>
+                </div>
+                <div class="contact__form-control">
+                  <label class="contact__form-label" for="message"
+                    >Ваше сообщение</label
+                  >
+                  <textarea
+                    class="contact__form-message"
+                    name="user_message"
+                    id="message"
+                  ></textarea>
+                </div>
+                <div class="contact__form-group">
+                  <button
+                    class="btn-reset primary-btn contact__form-btn"
+                    type="submit"
+                  >
+                    Отправить сообщение
+                  </button>
+                  <label class="contact__form-policy" for="check">
+                    <input
+                      class="contact__form-policy-field"
+                      type="checkbox"
+                      name="user_policy"
+                      id="check"
+                    />
+                    <span class="contact__form-policy-box"></span>
+                    <div class="contact__form-policy-descr">
+                      Я согласен(а) с
+                      <a href="./privacy.html" class="contact__form-policy-link"
+                        >политикой конфиденциальности</a
+                      >
+                    </div>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
         <aside class="socpanel">
           <span class="title title--md socpanel__name">Социальные сети</span>
           <ul class="list-reset socpanel__list social">

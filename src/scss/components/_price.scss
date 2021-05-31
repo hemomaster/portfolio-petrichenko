@@ -18,8 +18,8 @@
 
   &__grid {
     @extend %d-grid;
-    grid-template-columns: repeat(2, 365px);
-    grid-auto-rows: 165px;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(165px, auto);
     gap: 20px;
     justify-content: space-between;
   }

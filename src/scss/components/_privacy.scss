@@ -1,0 +1,44 @@
+a {
+  color: clr(dark-blue-color);
+}
+
+h1,
+h2,
+p:not(li > p),
+ol:not(li > ol) {
+  margin-bottom: 20px;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 40px;
+  counter-reset: item;
+}
+
+li::before {
+  counter-increment: item;
+}
+
+.first-list > li::before {
+  content: "1." counter(item) ". ";
+}
+
+.second-list > li::before {
+  content: "2." counter(item) ". ";
+}
+
+.third-list > li::before {
+  content: "3." counter(item) ". ";
+}
+
+.fourth-list > li::before {
+  content: "3." counter(item) ". ";
+}
+
+li > ol {
+  padding-left: 0;
+}
+
+li > ol > li::before {
+  content: "- ";
+}

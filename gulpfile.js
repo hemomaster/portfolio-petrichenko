@@ -119,15 +119,8 @@ exports.cleandist = cleandist;
 
 exports.default = series(
   cleandist,
-  parallel(
-    scripts,
-    styles,
-    html,
-    server,
-    mailer,
-    favicon,
-    fonts,
-    images,
-    watching
-  )
+  favicon,
+  fonts,
+  images,
+  parallel(scripts, styles, html, server, mailer, watching)
 );

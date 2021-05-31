@@ -7,10 +7,11 @@
     gap: 40px 70px;
 
     &-media {
-      grid-row: 1/-1;
+      grid-row: span 2;
     }
 
     &-img {
+      @extend %d-block;
       height: 100%;
       object-fit: cover;
     }

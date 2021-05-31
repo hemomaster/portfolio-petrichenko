@@ -1,0 +1,154 @@
+.contact {
+  padding-bottom: 90px;
+
+  &__grid {
+    @extend %d-grid;
+    grid-template-columns: 400px 585px;
+    justify-content: center;
+    gap: 70px;
+  }
+
+  &__img {
+    @extend %d-block;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+  }
+
+  &__title {
+    @extend %circle-decor;
+    margin-bottom: 10px;
+  }
+
+  &__name,
+  &__descr,
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    @extend %bar-decor;
+
+    span {
+      padding-bottom: 0;
+
+      &::before {
+        right: auto;
+      }
+    }
+  }
+
+  &__descr {
+    @extend %d-block;
+  }
+
+  &__list {
+    justify-content: flex-start;
+
+    .social__item {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
+    .icon-facebook,
+    .icon-instagram,
+    .icon-telegram {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__form {
+    @extend %d-flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-group {
+      @extend %d-flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    &-control {
+      position: relative;
+      flex: 1;
+      font-size: 0;
+      border: 1px solid clr(black-color);
+      border-radius: 4px;
+      z-index: 1;
+    }
+
+    &-label,
+    &-field,
+    &-message {
+      font-size: fz(xs);
+    }
+
+    &-label {
+      @extend %d-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(12px, -50%);
+      padding: 0 8px;
+      background-color: clr(white-color);
+      z-index: 5;
+    }
+
+    &-field,
+    &-message {
+      width: 100%;
+      font-weight: fw(medium);
+      border: none;
+      padding: 14px 20px;
+    }
+
+    &-message {
+      min-height: 190px;
+      resize: none;
+    }
+
+    &-btn {
+      align-self: start;
+    }
+
+    &-policy {
+      position: relative;
+      padding-left: 22px;
+
+      &-field {
+        display: none;
+
+        &:checked + .contact__form-policy-box {
+          background-color: clr(dark-blue-color);
+          transition: background-color 0.4s ease-in-out;
+        }
+      }
+
+      &-box {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        @extend %d-block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid clr(black-color);
+        border-radius: 2px;
+        background-color: clr(white-color);
+        transition: background-color 0.4s ease-in-out;
+      }
+
+      &-descr {
+        font-size: fz(xs);
+      }
+
+      &-link {
+        color: clr(dark-blue-color);
+      }
+    }
+  }
+}
