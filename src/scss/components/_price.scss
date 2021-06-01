@@ -36,6 +36,10 @@
       padding-left: 25px;
     }
 
+    &-body {
+      @extend %d-block;
+    }
+
     &-header {
       position: relative;
       @extend %f-center-between;
@@ -54,6 +58,10 @@
         height: 15px;
         border-radius: 100%;
         background-color: clr(accent-color);
+      }
+
+      &-cost {
+        white-space: nowrap;
       }
     }
   }

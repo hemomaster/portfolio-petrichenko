@@ -25,6 +25,20 @@
   .about__grid-skills {
     gap: 20px 30px;
   }
+
+  .gallery__grid {
+    grid-template-columns: repeat(auto-fill, 280px);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .gallery__grid-link:nth-child(4) {
+    grid-row: unset;
+  }
+
+  .gallery__grid-link:last-child {
+    grid-column: unset;
+  }
 }
 
 // до 1024px
@@ -110,7 +124,9 @@
   }
 
   .summary__name,
-  .technology__name {
+  .technology__name,
+  .gallery__name,
+  .price__name {
     margin-bottom: 40px;
   }
 
@@ -124,6 +140,24 @@
 
   .technology__cards {
     margin-bottom: 80px;
+  }
+
+  .price__grid {
+    grid-template-columns: 1fr;
+    gap: unset;
+    justify-content: center;
+  }
+
+  .price__list {
+    max-width: 470px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .price__list:not(:last-child),
+  .price__item:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
