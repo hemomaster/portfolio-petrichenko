@@ -109,7 +109,8 @@
     grid-row: unset;
   }
 
-  .summary__name {
+  .summary__name,
+  .technology__name {
     margin-bottom: 40px;
   }
 
@@ -119,6 +120,10 @@
 
   .summary__list {
     row-gap: 30px;
+  }
+
+  .technology__cards {
+    margin-bottom: 80px;
   }
 }
 
@@ -177,6 +182,23 @@
 
   .summary__list {
     row-gap: 20px;
+  }
+
+  .technology__name {
+    margin-bottom: 20px;
+  }
+
+  .technology__cards {
+    gap: 20px;
+  }
+
+  .technology__cards {
+    margin-bottom: 40px;
+  }
+
+  .technology__levels {
+    grid-template-columns: repeat(auto-fill, 290px);
+    row-gap: 40px;
   }
 }
 

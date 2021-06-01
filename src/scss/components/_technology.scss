@@ -13,7 +13,7 @@
 
   &__cards {
     @extend %d-grid;
-    grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
+    grid-template: repeat(2, minmax(270px, auto)) / repeat(auto-fill, 270px);
     grid-auto-rows: minmax(270px, auto);
     justify-content: center;
     gap: 13px;
@@ -40,14 +40,16 @@
       margin-bottom: 15px;
     }
     &-text {
+      @include limitstr(5);
       font-size: fz(xs);
     }
   }
 
   &__levels {
     @extend %d-grid;
-    grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
+    grid-template: repeat(2, minmax(70px, auto)) / repeat(auto-fill, 350px);
     grid-auto-rows: minmax(70px, auto);
+    justify-content: center;
     gap: 30px 45px;
 
     &-item {
