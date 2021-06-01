@@ -39,6 +39,11 @@
   .gallery__grid-link:last-child {
     grid-column: unset;
   }
+
+  .contact__grid {
+    grid-template-columns: 380px 550px;
+    gap: 30px;
+  }
 }
 
 // до 1024px
@@ -96,6 +101,15 @@
 
   .summary__grid {
     grid-template-columns: repeat(2, 350px);
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+
+  .contact__img {
+    display: none;
   }
 }
 
@@ -233,6 +247,36 @@
   .technology__levels {
     grid-template-columns: repeat(auto-fill, 290px);
     row-gap: 40px;
+  }
+
+  .contact {
+    padding-bottom: 50px;
+  }
+
+  .contact__form {
+    gap: 30px;
+  }
+
+  .contact__form-group {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact__form-group .contact__form-control {
+    align-self: stretch;
+  }
+
+  .contact__form-btn {
+    align-self: center;
+  }
+
+  .contact__form-policy {
+    order: -1;
+    max-width: 220px;
+  }
+
+  .contact__form-policy-link {
+    // display: inline;
   }
 }
 
