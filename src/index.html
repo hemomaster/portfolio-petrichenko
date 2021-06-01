@@ -132,7 +132,7 @@
         <section
           class="hero"
           id="hero"
-          style="background-image: url('images/hero-bg.webp')"
+          style="background-image: url('images/hero-bg-w1920.webp')"
         >
           <div class="container hero__container">
             <div class="hero__content">
@@ -234,7 +234,16 @@
           <div class="container">
             <div class="about__grid">
               <picture class="about__grid-media">
-                <source srcset="./images/foto.webp" type="image/webp" />
+                <source
+                  srcset="./images/foto-w300.webp"
+                  media="(max-width: 575px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/foto.webp"
+                  media="(min-width: 576px)"
+                  type="image/webp"
+                />
                 <img
                   class="about__grid-img"
                   src="./images/foto.jpg"

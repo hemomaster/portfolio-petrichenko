@@ -16,8 +16,7 @@
       height: 100%;
       object-fit: cover;
     }
-    &-descr {
-    }
+
     &-skills {
       @extend %d-grid;
       grid-template: repeat(2, minmax(120px, auto)) / repeat(2, 260px);
@@ -94,9 +93,11 @@
   &__info {
     flex: 0 0 200px;
   }
+
   &__title {
     margin-bottom: 5px;
   }
+
   &__descr {
     @include limitstr(5);
     font-size: fz(xs);
