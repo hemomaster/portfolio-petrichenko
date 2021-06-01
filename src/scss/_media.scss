@@ -79,6 +79,10 @@
   .my-skill__descr {
     @include limitstr(3);
   }
+
+  .summary__grid {
+    grid-template-columns: repeat(2, 350px);
+  }
 }
 
 // до 800px
@@ -103,6 +107,18 @@
 
   .about__grid-media {
     grid-row: unset;
+  }
+
+  .summary__name {
+    margin-bottom: 40px;
+  }
+
+  .summary__grid {
+    grid-template-columns: repeat(2, 260px);
+  }
+
+  .summary__list {
+    row-gap: 30px;
   }
 }
 
@@ -150,6 +166,18 @@
   .about__grid {
     grid-template-rows: 420px minmax(230px, auto);
   }
+
+  .summary__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary__column:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .summary__list {
+    row-gap: 20px;
+  }
 }
 
 // до 414px
@@ -173,6 +201,10 @@
 
   .about__grid {
     grid-template-rows: 340px minmax(230px, auto);
+  }
+
+  .summary__list {
+    row-gap: 10px;
   }
 }
 

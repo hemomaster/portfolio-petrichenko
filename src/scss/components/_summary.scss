@@ -18,8 +18,7 @@
   &__grid {
     @extend %d-grid;
     grid-template-columns: repeat(2, 425px);
-
-    column-gap: 130px;
+    justify-content: space-between;
   }
 
   &__column {
@@ -128,6 +127,7 @@
     }
   }
   &__text {
+    @include limitstr(6);
     font-size: fz(xs);
   }
 
